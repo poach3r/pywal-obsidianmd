@@ -4,6 +4,7 @@ A pywal script to create an obsidian.md theme.
 ## Installation:
 
 `git clone https://github.com/poach3r/pywal-obsidianmd`
+
 `chmod +x ~/pywal-obsidianmd/pywal-obsidianmd.sh`
 
 Then, go to the Obsidian themes section and install the Atom theme.
