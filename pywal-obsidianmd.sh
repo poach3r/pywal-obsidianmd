@@ -2,15 +2,15 @@
 
 manifest () {
 echo "{" > $theme_dir/manifest.json
-echo '    "name": "pywal",' >> $theme_dir/manifest.json
-echo '    "version": "0.0.0",' >> $theme_dir/manifest.json
+echo '    "name": "pywal-obsidianmd",' >> $theme_dir/manifest.json
+echo '    "version": "1.0.0",' >> $theme_dir/manifest.json
 echo '    "minAppVersion": "0.16.0",' >> $theme_dir/manifest.json
 echo '    "author": "poacher"' >> $theme_dir/manifest.json
 echo "}" >> $theme_dir/manifest.json
 }
 
 theme () {
-    echo ".theme-dark {" > $theme_dir/theme.css
+    echo ".theme-dark {" >> $theme_dir/theme.css
     echo "  --background-primary: $(head -n 1 ~/.cache/wal/colors);" >> $theme_dir/theme.css
     echo "  --background-primary-alt: $(head -n 4 ~/.cache/wal/colors | tail -1);" >> $theme_dir/theme.css
     echo "  --background-accent: $(head -2 ~/.cache/wal/colors | tail -1);" >> $theme_dir/theme.css
@@ -29,16 +29,18 @@ theme () {
     echo "  --yellow: $(head -n 11 ~/.cache/wal/colors | tail -1);" >> $theme_dir/theme.css
     echo "  --orange: $(head -n 10 ~/.cache/wal/colors | tail -1);" >> $theme_dir/theme.css
     echo "}" >> $theme_dir/theme.css
+    cat ~/pywal-obsidianmd/theme.css >> $theme_dir/theme.css
 }
 
 make () {
-mkdir $theme_dir
-touch $theme_dir/manifest.json
-touch $theme_dir/theme.css
+    rm -rf $theme_dir
+    mkdir $theme_dir
+    touch $theme_dir/manifest.json
+    touch $theme_dir/theme.css
 }
 
 read -p "Enter Vault Directory: " vault_dir
-theme_dir="$vault_dir/.obsidian/themes/Atom"
-#make
-#manifest
+theme_dir="$vault_dir/.obsidian/themes/pywal-obsidianmd"
+make
+manifest
 theme
