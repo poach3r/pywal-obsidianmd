@@ -14,3 +14,5 @@ A pywal script to create an obsidian.md theme.
 Then simply enter your full vault directory, in my case it would be `/home/poacher/Notes`
 
 You should then see pywal-obsidianmd as an available theme.
+
+![theme](/20230328_08h27m48s_grim.png)
