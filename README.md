@@ -9,9 +9,17 @@ A pywal script to create an obsidian.md theme.
 
 ## Usage:
 
-`~/pywal-obsidianmd/pywal-obsidianmd.sh`
+### Interactively
 
-Then simply enter your full vault directory, in my case it would be `/home/poacher/Notes`
+`./pywal-obsidianmd.sh`
+
+Then simply enter your full vault directory, in my case it would be `"/home/stefan/OneDrive/Obsidian Vault"`
+
+### via command line argument
+`./pywal-obsidianmd.sh "/home/stefan/OneDrive/Obsidian Vault"`
+
+
+
 
 You should then see pywal-obsidianmd as an available theme.
 
