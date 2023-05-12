@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#set variable "workdir" to the path where this script is located
 workdir="$(dirname -- "$(readlink -f -- "$BASH_SOURCE")")"
 
 
@@ -42,14 +43,17 @@ make () {
     touch $theme_dir/theme.css
 }
 
+#write argument 1 to "vault_dir"
 vault_dir="$1"
 
+#if no argument has been given, ask for it interactively
 if [[ -z ${vault_dir} ]];
 then
     read -p "Enter Vault Directory: " vault_dir
 fi
 
 theme_dir="$vault_dir/.obsidian/themes/pywal-obsidianmd"
+
 make
 manifest
 theme
