@@ -4,8 +4,8 @@ A pywal script to create an obsidian.md theme.
 ## Installation:
 
 `git clone https://github.com/poach3r/pywal-obsidianmd`
-
-`chmod +x ~/pywal-obsidianmd/pywal-obsidianmd.sh`
+`cd pywal-obsidianmd`
+`chmod +x pywal-obsidianmd.sh`
 
 ## Usage:
 
