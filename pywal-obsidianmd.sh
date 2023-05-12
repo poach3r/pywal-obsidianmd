@@ -1,5 +1,8 @@
 #!/bin/bash
 
+workdir="$(dirname -- "$(readlink -f -- "$BASH_SOURCE")")"
+
+
 manifest () {
 echo "{" > $theme_dir/manifest.json
 echo '    "name": "pywal-obsidianmd",' >> $theme_dir/manifest.json
@@ -29,7 +32,7 @@ theme () {
     echo "  --yellow: $(head -n 11 ~/.cache/wal/colors | tail -1);" >> $theme_dir/theme.css
     echo "  --orange: $(head -n 10 ~/.cache/wal/colors | tail -1);" >> $theme_dir/theme.css
     echo "}" >> $theme_dir/theme.css
-    cat ~/pywal-obsidianmd/theme.css >> $theme_dir/theme.css
+    cat $workdir/theme.css >> $theme_dir/theme.css
 }
 
 make () {
@@ -39,7 +42,13 @@ make () {
     touch $theme_dir/theme.css
 }
 
-read -p "Enter Vault Directory: " vault_dir
+vault_dir="$1"
+
+if [[ -z ${vault_dir} ]];
+then
+    read -p "Enter Vault Directory: " vault_dir
+fi
+
 theme_dir="$vault_dir/.obsidian/themes/pywal-obsidianmd"
 make
 manifest
