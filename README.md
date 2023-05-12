@@ -36,9 +36,11 @@ You should then see pywal-obsidianmd as an available theme.
 I use an alias to use it together with sxiv to choose a background. Just choose the background, mark 1 (just 1!) picture with M and quit with Q.
 
 this uses a python venv:
+
         alias wp='~/venv/bin/python3 -m pywal -i "$(sxiv -tfbo /usr/share/backgrounds)"; ~/OneDrive/src/pywal-obsidianmd/pywal-obsidianmd.sh "/home/stefan/OneDrive/Obsidian Vault"'
 
 this doesn't use a python venv:
+
         alias wp='wal -i "$(sxiv -tfbo /usr/share/backgrounds)"; ~/OneDrive/src/pywal-obsidianmd/pywal-obsidianmd.sh "/home/stefan/OneDrive/Obsidian Vault"'
 
 
