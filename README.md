@@ -1,10 +1,9 @@
 # pywal-obsidianmd
 A pywal script to create an obsidian.md theme.
-This is a fork
 
 ## Installation:
 
-`git clone https://github.com/stefanpinterBE/pywal-obsidianmd`
+`git clone https://github.com/poach3r/pywal-obsidianmd`
 
 `cd pywal-obsidianmd`
 
